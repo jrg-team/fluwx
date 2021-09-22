@@ -27,16 +27,14 @@ enum WXMiniProgramType { RELEASE, TEST, PREVIEW }
 ///[WeChatScene.FAVORITE]收藏
 enum WeChatScene { SESSION, TIMELINE, FAVORITE }
 
-extension MiniProgramTypeExtensions on WXMiniProgramType {
-  int toNativeInt() {
-    switch (this) {
-      case WXMiniProgramType.PREVIEW:
-        return 2;
-      case WXMiniProgramType.TEST:
-        return 1;
-      case WXMiniProgramType.RELEASE:
-        return 0;
-    }
-    return 0;
+int toNativeInt(WXMiniProgramType type) {
+  switch (type) {
+    case WXMiniProgramType.PREVIEW:
+      return 2;
+    case WXMiniProgramType.TEST:
+      return 1;
+    case WXMiniProgramType.RELEASE:
+      return 0;
   }
+  return 0;
 }
