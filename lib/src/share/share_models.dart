@@ -10,14 +10,14 @@
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
+ * Unless @required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
  * License for the specific language governing permissions and limitations under
  * the License.
  */
 import 'package:flutter/foundation.dart';
-import 'package:fluwx_no_pay/src/wechat_enums.dart';
+import '../wechat_enums.dart';
 
 import '../wechat_file.dart';
 
@@ -40,19 +40,19 @@ mixin WeChatShareBaseModel {
 class WeChatShareTextModel implements WeChatShareBaseModel {
   final String source;
   final WeChatScene scene;
-  final String? messageExt;
-  final String? messageAction;
-  final String? mediaTagName;
-  final String? title;
-  final String? description;
+  final String messageExt;
+  final String messageAction;
+  final String mediaTagName;
+  final String title;
+  final String description;
 
   WeChatShareTextModel(this.source,
       {this.scene = WeChatScene.SESSION,
       this.mediaTagName,
       this.messageAction,
       this.messageExt,
-      String? description,
-      String? title})
+      String description,
+      String title})
       : this.title = title ?? source,
         this.description = description ?? source;
 
@@ -78,20 +78,20 @@ class WeChatShareMiniProgramModel implements WeChatShareBaseModel {
   final WXMiniProgramType miniProgramType;
   final String userName;
   final String path;
-  final WeChatImage? hdImagePath;
-  final String? title;
-  final String? description;
-  final WeChatImage? thumbnail;
+  final WeChatImage hdImagePath;
+  final String title;
+  final String description;
+  final WeChatImage thumbnail;
   final bool withShareTicket;
-  final String? messageExt;
-  final String? messageAction;
-  final String? mediaTagName;
+  final String messageExt;
+  final String messageAction;
+  final String mediaTagName;
   final bool compressThumbnail;
 
   WeChatShareMiniProgramModel(
-      {required this.webPageUrl,
+      {@required this.webPageUrl,
       this.miniProgramType = WXMiniProgramType.RELEASE,
-      required this.userName,
+      @required this.userName,
       this.path: "/",
       this.title,
       this.description,
@@ -131,16 +131,16 @@ class WeChatShareMiniProgramModel implements WeChatShareBaseModel {
 class WeChatShareImageModel implements WeChatShareBaseModel {
   final WeChatImage source;
   final WeChatImage thumbnail;
-  final String? title;
+  final String title;
   final WeChatScene scene;
-  final String? description;
-  final String? messageExt;
-  final String? messageAction;
-  final String? mediaTagName;
+  final String description;
+  final String messageExt;
+  final String messageAction;
+  final String mediaTagName;
   final bool compressThumbnail;
 
   WeChatShareImageModel(this.source,
-      {WeChatImage? thumbnail,
+      {WeChatImage thumbnail,
       this.title,
       this.scene = WeChatScene.SESSION,
       this.description,
@@ -168,17 +168,17 @@ class WeChatShareImageModel implements WeChatShareBaseModel {
 /// if [musicUrl] and [musicLowBandUrl] are both provided,
 /// only [musicUrl] will be used.
 class WeChatShareMusicModel implements WeChatShareBaseModel {
-  final String? musicUrl;
-  final String? musicDataUrl;
-  final String? musicLowBandUrl;
-  final String? musicLowBandDataUrl;
-  final WeChatImage? thumbnail;
-  final String? title;
-  final String? description;
+  final String musicUrl;
+  final String musicDataUrl;
+  final String musicLowBandUrl;
+  final String musicLowBandDataUrl;
+  final WeChatImage thumbnail;
+  final String title;
+  final String description;
   final WeChatScene scene;
-  final String? messageExt;
-  final String? messageAction;
-  final String? mediaTagName;
+  final String messageExt;
+  final String messageAction;
+  final String mediaTagName;
   final bool compressThumbnail;
 
   WeChatShareMusicModel(
@@ -217,15 +217,15 @@ class WeChatShareMusicModel implements WeChatShareBaseModel {
 /// if [videoUrl] and [videoLowBandUrl] are both provided,
 /// only [videoUrl] will be used.
 class WeChatShareVideoModel implements WeChatShareBaseModel {
-  final String? videoUrl;
-  final String? videoLowBandUrl;
-  final WeChatImage? thumbnail;
-  final String? title;
-  final String? description;
+  final String videoUrl;
+  final String videoLowBandUrl;
+  final WeChatImage thumbnail;
+  final String title;
+  final String description;
   final WeChatScene scene;
-  final String? messageExt;
-  final String? messageAction;
-  final String? mediaTagName;
+  final String messageExt;
+  final String messageAction;
+  final String mediaTagName;
   final bool compressThumbnail;
 
   WeChatShareVideoModel(
@@ -262,18 +262,18 @@ class WeChatShareVideoModel implements WeChatShareBaseModel {
 ///[thumbnail] logo of your website
 class WeChatShareWebPageModel implements WeChatShareBaseModel {
   final String webPage;
-  final WeChatImage? thumbnail;
+  final WeChatImage thumbnail;
   final String title;
   final String description;
   final WeChatScene scene;
-  final String? messageExt;
-  final String? messageAction;
-  final String? mediaTagName;
+  final String messageExt;
+  final String messageAction;
+  final String mediaTagName;
   final bool compressThumbnail;
 
   WeChatShareWebPageModel(this.webPage,
       {this.title: "",
-      String? description,
+      String description,
       this.thumbnail,
       this.scene = WeChatScene.SESSION,
       this.mediaTagName,
@@ -303,13 +303,13 @@ class WeChatShareWebPageModel implements WeChatShareBaseModel {
 /// send files to WeChat
 class WeChatShareFileModel implements WeChatShareBaseModel {
   final WeChatFile source;
-  final WeChatImage? thumbnail;
+  final WeChatImage thumbnail;
   final String title;
   final String description;
   final WeChatScene scene;
-  final String? messageExt;
-  final String? messageAction;
-  final String? mediaTagName;
+  final String messageExt;
+  final String messageAction;
+  final String mediaTagName;
   final bool compressThumbnail;
 
   WeChatShareFileModel(this.source,
