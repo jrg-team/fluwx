@@ -2,7 +2,7 @@
 /// easy to use.
 ///
 ///  A open sou;rce project authorized by [OpenFlutter](https://github.com/OpenFlutter).
-library fluwx_no_pay;
+library fluwx;
 
 export './src/fluwx_iml.dart';
 export './src/response/wechat_response.dart';
